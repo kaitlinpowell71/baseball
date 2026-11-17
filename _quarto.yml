@@ -1,12 +1,19 @@
 project:
   type: website
 
+execute:
+  echo: false
+
 website:
   title: "Baseball"
   navbar:
     left:
       - href: index.qmd
         text: Home
+      - href: home-runs.qmd
+        text: Home runs
+      - href: sluggers.qmd
+        text: Sluggers
 
 format:
   html:

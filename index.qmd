@@ -2,6 +2,6 @@
 title: "Baseball"
 ---
 
-This is a Quarto website.
+# A History of Baseball Through Data
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Welcome! This site explores the history of Major League Baseball through its data. Using the Lahman database, we'll look at the players, teams, and seasons that have shaped the game.
