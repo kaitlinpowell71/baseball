@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Baseball",
+    "section": "",
+    "text": "A History of Baseball Through Data\nThis site uses the Lahman database to explore how the home-run game has changed over time. Home runs per team-game have generally risen across MLB history, though the rate varies from season to season. Measuring home runs per game also makes it easier to compare seasons of different lengths.\nThe site also highlights the 15 career home-run leaders and shows which players’ careers overlapped with 1994-2009. Visit the analysis pages in the navbar to explore the season-by-season trend and the career leaders."
+  },
+  {
+    "objectID": "home-runs.html",
+    "href": "home-runs.html",
+    "title": "Home runs",
+    "section": "",
+    "text": "Warning: Removed 1 row containing missing values or values outside the scale range\n(`geom_point()`)."
+  },
+  {
+    "objectID": "home-runs.html#comparing-shortened-seasons",
+    "href": "home-runs.html#comparing-shortened-seasons",
+    "title": "Home runs",
+    "section": "Comparing shortened seasons",
+    "text": "Comparing shortened seasons\n\n\n\n\n\nSeason\nHome runs\nTeam-games\nHome runs per game\n\n\n\n\n1981\n1781\n2788\n0.64\n\n\n1994\n3306\n3200\n1.03\n\n\n2019\n6776\n4858\n1.39\n\n\n2020\n2304\n1796\n1.28"
+  }
+]
