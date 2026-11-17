@@ -1,0 +1,62 @@
+---
+title: "Home runs"
+---
+
+```{r}
+#| message: false
+library(tidyverse)
+library(Lahman)
+```
+
+```{r}
+#| cache: true
+#| label: hr-by-season
+hr_by_season <- Teams |>
+  group_by(yearID) |>
+  summarise(
+    total_HR = sum(HR),
+    total_team_games = sum(G)
+  ) |>
+  mutate(
+    home_runs_per_game = total_HR / total_team_games,
+    season_type = if_else(
+      yearID %in% c(1918, 1919, 1981, 1994, 1995, 2020),
+      "Shortened season",
+      "Other season"
+    )
+  )
+```
+
+```{r}
+ggplot(hr_by_season, aes(x = yearID, y = home_runs_per_game)) +
+  geom_line(color = "gray60") +
+  geom_point(aes(color = season_type)) +
+  scale_color_manual(
+    name = "Season type",
+    values = c("Other season" = "gray40", "Shortened season" = "#D55E00")
+  ) +
+  labs(
+    title = "Home Runs per Team-Game by MLB Season",
+    subtitle = "Shortened seasons are highlighted",
+    x = "Season",
+    y = "Home runs per team-game",
+    caption = "Source: Lahman database"
+  )
+```
+
+## Comparing shortened seasons
+
+```{r}
+Teams |>
+  filter(yearID %in% c(2019, 1981, 1994, 2020)) |>
+  group_by(yearID) |>
+  summarise(
+    total_home_runs = sum(HR),
+    total_team_games = sum(G),
+    home_runs_per_game = round(total_home_runs / total_team_games, 2)
+  ) |>
+  arrange(yearID) |>
+  knitr::kable(
+    col.names = c("Season", "Home runs", "Team-games", "Home runs per game")
+  )
+```
